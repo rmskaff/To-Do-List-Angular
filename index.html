@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+<link href="styles.css" type="text/css" rel="stylesheet">
+  <body ng-app="ourModule" ng-controller="ourController">
+<h1> To-Do </h1>
+<h3> Get this stuff done. You can do it! <br/> <br/>
+
+<input type="text" placeholder= "To Do" ng-model="item.name">
+
+<input type="text" placeholder= "Filter Me" ng-model="filter">
+
+<button type="button" ng-click="addItem(item)"> Add Item </button>
+
+
+<div ng-repeat="item in toDoList | filter: filter track by $index">
+<p>{{ item.name}}</p>
+<button type="button" ng-click="removeItem($index)"> x </button>
+</div>
+
+
+
+<script src="angular.js"></script>
+  <script src="script.js"></script>
+  </body>
+</html>
